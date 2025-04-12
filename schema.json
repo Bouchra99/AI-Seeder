@@ -1,0 +1,199 @@
+{
+  "tables": {
+    "director": {
+      "columns": [
+        {
+          "name": "director_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "nextval('director_director_id_seq'::regclass)",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false,
+          "max_length": 255
+        },
+        {
+          "name": "birth_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false
+        }
+      ],
+      "primary_keys": [
+        "director_id"
+      ],
+      "unique_constraints": []
+    },
+    "movie": {
+      "columns": [
+        {
+          "name": "movie_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "nextval('movie_movie_id_seq'::regclass)",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false,
+          "max_length": 255
+        },
+        {
+          "name": "release_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false
+        },
+        {
+          "name": "duration",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false
+        },
+        {
+          "name": "director_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false
+        }
+      ],
+      "primary_keys": [
+        "movie_id"
+      ],
+      "unique_constraints": []
+    },
+    "movie_genre": {
+      "columns": [
+        {
+          "name": "movie_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "genre_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": true,
+          "is_unique": false
+        }
+      ],
+      "primary_keys": [
+        "movie_id",
+        "genre_id"
+      ],
+      "unique_constraints": []
+    },
+    "genre": {
+      "columns": [
+        {
+          "name": "genre_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "nextval('genre_genre_id_seq'::regclass)",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(100)",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": true,
+          "max_length": 100
+        }
+      ],
+      "primary_keys": [
+        "genre_id"
+      ],
+      "unique_constraints": [
+        [
+          "name"
+        ]
+      ]
+    },
+    "movie_actor": {
+      "columns": [
+        {
+          "name": "movie_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "actor_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": true,
+          "is_unique": false
+        }
+      ],
+      "primary_keys": [
+        "movie_id",
+        "actor_id"
+      ],
+      "unique_constraints": []
+    },
+    "actor": {
+      "columns": [
+        {
+          "name": "actor_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "nextval('actor_actor_id_seq'::regclass)",
+          "is_primary_key": true,
+          "is_unique": false
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false,
+          "max_length": 255
+        },
+        {
+          "name": "birth_date",
+          "type": "DATE",
+          "nullable": true,
+          "default": "None",
+          "is_primary_key": false,
+          "is_unique": false
+        }
+      ],
+      "primary_keys": [
+        "actor_id"
+      ],
+      "unique_constraints": []
+    }
+  },
+  "relationships": []
+}
