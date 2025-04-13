@@ -1,0 +1,62 @@
+{
+  "description": "Generated model for table movie",
+  "properties": {
+    "movie_id": {
+      "description": "Column movie_id of type INTEGER (Primary Key)",
+      "title": "Movie Id",
+      "type": "integer"
+    },
+    "title": {
+      "description": "Column title of type VARCHAR(255)",
+      "maxLength": 255,
+      "title": "Title",
+      "type": "string"
+    },
+    "release_date": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Column release_date of type DATE",
+      "title": "Release Date"
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Column duration of type INTEGER",
+      "title": "Duration"
+    },
+    "director_id": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Column director_id of type INTEGER",
+      "title": "Director Id"
+    }
+  },
+  "required": [
+    "movie_id",
+    "title"
+  ],
+  "title": "Movie",
+  "type": "object"
+}
