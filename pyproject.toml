@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "instructor>=1.7.9",
     "psycopg2>=2.9.10",
     "pydantic>=2.11.3",
     "python-dotenv>=1.1.0",
